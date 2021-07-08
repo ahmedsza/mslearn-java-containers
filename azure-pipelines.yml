@@ -4,6 +4,12 @@ trigger:
 resources:
 - repo: self
 
+variables:
+  dockerfilePath: '$(Build.SourcesDirectory)/src/Dockerfile'
+  webRepository: 'web'
+  tag: '$(Build.BuildId)'
+  vmImageName: 'ubuntu-latest'
+  
 stages:
 - stage: Build
   displayName: Build and publish Java container
